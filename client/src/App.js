@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Link, Route } from 'react-router-dom';
 import Landing from './components/views/LendingPage/LendingPage';
 import Login from './components/views/LoginPage/LoginPage';
 import Register from './components/views/RegisterPage/RegisterPage';
+import Auth from './hoc/auth'
 
 function App() {
   return (
@@ -21,9 +22,9 @@ function App() {
           </li>
         </ul>
         <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/login" component={Login}  />
-          <Route exact path="/register" component={Register} />
+          <Route exact path="/" component={Auth(Landing, null)} />
+          <Route exact path="/login" component={Auth(Login, false)}  />
+          <Route exact path="/register" component={Auth(Register, false)} />
         </Switch>
       </BrowserRouter>
     </div>

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 function LendingPage(props) {
     useEffect(() => {
@@ -25,4 +26,4 @@ function LendingPage(props) {
     )
 }
 
-export default LendingPage
+export default withRouter(LendingPage)
